@@ -1,0 +1,9 @@
+name	flour_g	water_g	salt_g	starter_g	yeast_g	cold_h	room_h	bake_min	bake_c
+Chleb drożdżowy na zimno	500	350	10	0	2	12	1.5	40	230
+Chleb pszenny na zakwasie	450	300	10	100	0	12	4	45	240
+Chleb żytnio-pszenny na zakwasie	500	400	10	150	0	10	5	50	240
+Focaccia	500	400	10	0	3	16	1	25	230
+Bułki śniadaniowe	500	300	9	0	4	10	1	18	220
+Chleb tostowy	500	320	10	0	5	8	1.5	35	200
+Bagietki	500	350	10	0	1	16	1.5	25	240
+Ciabatta	500	425	10	0	2	14	1	30	230

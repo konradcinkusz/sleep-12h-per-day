@@ -1,0 +1,22 @@
+template	name	block	hours
+A	Praca zdalna	Sen	12
+A	Praca zdalna	Praca	8
+A	Praca zdalna	Ruch i higiena	1
+A	Praca zdalna	Posiłki	1.5
+A	Praca zdalna	Dom	0.5
+A	Praca zdalna	Chleb (czas aktywny)	0.5
+A	Praca zdalna	Wolne	0.5
+B	Biuro z dojazdem	Sen	12
+B	Biuro z dojazdem	Praca	8
+B	Biuro z dojazdem	Dojazd	1
+B	Biuro z dojazdem	Ruch i higiena	0.75
+B	Biuro z dojazdem	Posiłki	1.25
+B	Biuro z dojazdem	Dom	0.5
+B	Biuro z dojazdem	Chleb (czas aktywny)	0.25
+B	Biuro z dojazdem	Wolne	0.25
+C	Weekend	Sen	12
+C	Weekend	Ruch i higiena	1.5
+C	Weekend	Posiłki	2
+C	Weekend	Dom	1.5
+C	Weekend	Chleb (czas aktywny)	2
+C	Weekend	Wolne	5
