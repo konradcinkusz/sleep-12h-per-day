@@ -89,8 +89,8 @@ vals["week.templates"] = len(rows)
 
 # ---- recipes: baker's percentages COMPUTED from grams ----------------------
 rec = read_tsv("breads.tsv")
-body = ["\\begin{center}\\small\\begin{longtable}{@{}p{0.27\\linewidth}rrrrrr@{}}\\toprule",
-        "\\textsf{\\textbf{Chleb}}&\\textsf{\\textbf{mąka g}}&\\textsf{\\textbf{woda g}}&\\textsf{\\textbf{sól g}}&\\textsf{\\textbf{zakwas/drożdże g}}&\\textsf{\\textbf{nawodnienie \\%}}&\\textsf{\\textbf{masa g}}\\\\\\midrule\\endhead\\bottomrule\\endlastfoot"]
+body = ["\\begin{center}\\small\\begin{longtable}{@{}p{0.22\\linewidth}rrrrrr@{}}\\toprule",
+        "\\textsf{\\textbf{Chleb}}&\\textsf{\\textbf{mąka [g]}}&\\textsf{\\textbf{woda [g]}}&\\textsf{\\textbf{sól [g]}}&\\textsf{\\textbf{zakwas [g]}}&\\textsf{\\textbf{nawodn. \\%}}&\\textsf{\\textbf{masa [g]}}\\\\\\midrule\\endhead\\bottomrule\\endlastfoot"]
 timing = ["\\begin{center}\\small\\begin{longtable}{@{}p{0.27\\linewidth}rrrr@{}}\\toprule",
         "\\textsf{\\textbf{Chleb}}&\\textsf{\\textbf{zimno h}}&\\textsf{\\textbf{pokojowa h}}&\\textsf{\\textbf{piec °C}}&\\textsf{\\textbf{pieczenie min}}\\\\\\midrule\\endhead\\bottomrule\\endlastfoot"]
 hyd_all = []

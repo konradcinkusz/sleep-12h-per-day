@@ -1,0 +1,59 @@
+\chapter{Szablony doby}
+\markboth{Szablony doby}{Szablony doby}
+
+Szablon to doba rozpisana na bloki, których suma daje dokładnie dwadzieścia cztery godziny. Książka ma \val{week.templates} szablony. W każdym z nich sen trwa \val{week.A.sleep} godzin, bo na nim opiera się cały plan. Wolne wynosi w szablonie A \val{week.A.free} godziny, w szablonie B \val{week.B.free} godziny, a w szablonie C \val{week.C.free} godzin. Różnią się tym, ile zostaje na pracę, dojazd i dom. Sprawdzenie sumy jest bramką narzędzia: szablon, który nie daje dwudziestu czterech godzin, nie przechodzi kontroli.
+
+\generated{week-templates}
+
+Zwróć uwagę na wolne. W szablonie roboczym zostaje pół godziny albo ćwierć godziny, a w weekendowym pięć. To jest miejsce, w którym większość planów pęka: wolne jest najmniej chronione, bo nie wygląda jak zobowiązanie. Dlatego w każdym szablonie jest wpisane świadomie, a nie jako reszta.
+
+\subsection*{Jak wypełnić własny szablon}
+
+Zacznij od bloku snu, bo w tym planie nie podlega on negocjacjom. Wpisz godzinę zasypiania i godzinę budzenia, a różnicę zapisz w godzinach. Jeśli Twoja potrzeba to dwanaście godzin, tyle właśnie zostaje. Dalej postępuj tak:
+
+\begin{enumerate}
+\item Wpisz sen jako różnicę godzin, a nie jako kwadranse wieczorem. Czterdzieści pięć minut to 0,75 godziny.
+\item Zapisz realne bloki: pracę razem z przerwami, dojazd w obie strony, posiłki, ruch i higienę, dom i chleb w czasie aktywnym. Nie wpisuj tego, co chciałbyś robić, tylko to, co faktycznie zajmuje czas.
+\item Zsumuj wszystko. Suma musi wynosić dokładnie 24.
+\item Jeśli suma przekracza 24, skróć blok najbardziej elastyczny, a nie ten, który najbardziej lubisz. Najbardziej elastyczny to ten, którego skrócenie nie łamie żadnej innej części planu.
+\item Wolne wpisz jako wartość, której bronisz, a nie jako resztę. Jeśli reszta wynosi zero, plan jest pusty w tym miejscu. Zapisz to tak, jak jest.
+\end{enumerate}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{4.6cm}|p{2.2cm}|p{2.6cm}|p{4.6cm}|}
+\hline
+\textsf{\textbf{Blok}} & \textsf{\textbf{Godziny}} & \textsf{\textbf{Od--do}} & \textsf{\textbf{Co zastępuje, uwagi}}\\
+\hline
+Sen & & & \\
+\hline
+Praca & & & \\
+\hline
+Dojazd & & & \\
+\hline
+Ruch i higiena & & & \\
+\hline
+Posiłki & & & \\
+\hline
+Dom & & & \\
+\hline
+Chleb (czas aktywny) & & & \\
+\hline
+Wolne & & & \\
+\hline
+Inne & & & \\
+\hline
+\textbf{Razem} & \textbf{24} & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Pytania kontrolne}
+
+\begin{enumerate}
+\item Czy suma Twojego szablonu wynosi dokładnie 24 godziny, czy tylko w przybliżeniu? Jeśli w przybliżeniu, który blok jest niedokładny?
+\item Który blok w Twoim szablonie jest najbardziej elastyczny i co dokładnie zostaje, gdy skrócisz go o godzinę?
+\item Ile godzin wolnego zostaje w dniu roboczym po odjęciu pracy i dojazdu? Policz to także w ujęciu tygodniowym.
+\item Które bloki są czasem biernym, a które wymagają Twojej obecności? Czy oba rodzaje mieszczą się w tej samej godzinie?
+\item Co zmienisz w szablonie, jeśli sen przesunie się o godzinę w jedną stronę, a tydzień pracy zostanie taki sam?
+\end{enumerate}

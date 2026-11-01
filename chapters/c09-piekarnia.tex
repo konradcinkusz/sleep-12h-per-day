@@ -1,0 +1,119 @@
+\chapteropen{09}
+
+\begin{cele}
+\item rozpisać jeden cykl wypieku od zamieszania ciasta do wyjęcia chleba z pieca, z godzinami i z czasem aktywnym;
+\item policzyć tygodniowe zużycie mąki, liczbę wypieków, masę ciasta i koszt mąki przy jawnych założeniach;
+\item dobrać wypieki do dnia roboczego i do weekendu oraz wiedzieć, co przesunąć, kiedy plan się nie zgadza;
+\item rozpoznać ciasto zbyt zimne i przefermentowane oraz wiedzieć, co z nim zrobić.
+\end{cele}
+
+Poprzedni rozdział wyjaśnił, dlaczego chleb pasuje do długiego snu: ciasto pracuje w lodówce, a ty w tym czasie śpisz. Tutaj zamieniamy tę zasadę na konkretne godziny. Wszystkie czasy wynikają z trzech rzeczy: tabeli receptur, która jest w Dodatku B i w tym rozdziale w postaci \generated{recipe-timing}, z godziny zaśnięcia i wstania oraz z kilku założeń, które wypisuję wprost. Dni robocze to sen od 21:00 do 09:00, a weekend od 22:00 do 10:00. To dwanaście godzin snu, czyli \val{week.A.sleep} h w szablonie A.
+
+\section{Jeden cykl, godzina po godzinie}
+
+Każdy wypiek z tego rozdziału ma ten sam kształt: zamieszanie ciasta wieczorem, noc w lodówce, pieczenie po przebudzeniu. Różnią się długością etapów. Najprostszy wypiek to chleb drożdżowy na zimno, bo ma 12 godzin zimna, 1,5 godziny fazy pokojowej i 40 minut pieczenia w 230\,\textdegree{}C. Jego ciasto waży \val{bread.1.mass} g.
+
+\begin{przyklad}[Wtorek wieczór, środa rano]
+\begin{center}\small
+\begin{tabular}{@{}p{0.2\linewidth}p{0.6\linewidth}r@{}}
+\toprule
+Godzina & Co robisz & Aktywnie\\
+\midrule
+20:15--20:30 & Mieszasz i wyrabiasz: 500 g mąki, 350 g wody, 10 g soli, 2 g drożdży. Odkładasz miskę do lodówki. & 15 min\\
+21:00 & Idziesz spać. Ciasto zimne od 20:30. & --\\
+09:00 & Wstajesz i wyjmujesz ciasto z lodówki. & --\\
+09:00--10:30 & Faza pokojowa, 1,5 h. Ciasto się rozrasta. & --\\
+10:00 & Włączasz piekarnik na 230\,\textdegree{}C. Zakładam tu ok. 30 min nagrzewania; sprawdź u siebie. & --\\
+10:15--10:30 & Formujesz bochenek i wkładasz go do pieca. & 15 min\\
+10:30--11:10 & Pieczenie, 40 min w 230\,\textdegree{}C. & --\\
+11:10 & Wyjmujesz chleb i stawiasz na kratce do ostygnięcia. & --\\
+\midrule
+\multicolumn{2}{@{}l}{Razem czas aktywny jednego cyklu} & \textbf{30 min}\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{przyklad}
+
+Trzy miejsca w tym przebiegu wymagają uwagi. Po pierwsze, zimno trwa od 20:30 do 09:00, czyli 12 godzin 30 minut, a przepis podaje 12 godzin. Różnicę można usunąć, zaczynając zamieszanie o 20:45: wtedy ciasto trafia do lodówki o 21:00 i wyjmujesz je dokładnie po 12 godzinach. Zostawiam 20:15, bo daje pół godziny zapasu przed snem na umycie miski i odłożenie ciasta; nie planuj zamieszania na ostatnią minutę. Po drugie, wyjmujesz ciasto, kiedy wstajesz, a nie w nocy. Wyjęcie w nocy przesuwa fazę pokojową na środek snu, a plan zaczyna się od tego, że nie musisz nic robić przed przebudzeniem. Po trzecie, 15 minut rano to formowanie i wkładanie, nie czekanie. O 10:15 musisz być przy stole, a piekarnik musi być gotowy.
+
+Z tego cyklu wynika ważna rzecz dla całego rozdziału. Czas aktywny to 30 minut: 15 wieczorem i 15 rano. Reszta to czas bierny, w którym ciasto pracuje, a ty robisz coś innego. Ta różnica między czasem aktywnym a biernym jest powodem, dla którego chleb w ogóle mieści się w dobie z dwunastoma godzinami snu.
+
+\section{Tydzień: cztery wypieki i ich koszt}
+
+Tydzień z tego rozdziału ma cztery wypieki: chleb drożdżowy na zimno, chleb pszenny na zakwasie, focaccię i bułki śniadaniowe. Dwa pierwsze to dni robocze, dwa ostatnie to weekend. Poniższa tabela pokazuje, który dzień robi co. Godziny podane są dla dni roboczych z pełnym snem od 21:00 do 09:00; w sobotę sen przesuwa się, o czym niżej.
+
+\begin{center}\small
+\begin{tabular}{@{}p{0.14\linewidth}p{0.56\linewidth}r@{}}
+\toprule
+Dzień & Co się dzieje & Aktywnie\\
+\midrule
+Poniedziałek & nic; sen 21:00--09:00 & 0 h\\
+Wtorek & 20:15 zamieszanie drożdżowego (500 g mąki) & 0,25 h\\
+Środa & 10:15 formowanie, 10:30--11:10 pieczenie drożdżowego & 0,25 h\\
+Czwartek & 20:15 zamieszanie zakwasu (450 g mąki) & 0,25 h\\
+Piątek & 12:45 formowanie zakwasu, 13:00--13:45 pieczenie; 20:15 zamieszanie focaccii (500 g mąki) & 0,50 h\\
+Sobota & 09:30 zamieszanie bułek (500 g mąki); 13:15 formowanie focaccii, 13:30--13:55 pieczenie; 20:30 formowanie bułek, 20:45--21:03 pieczenie & 0,75 h\\
+Niedziela & nic; sen 22:00--10:00 & 0 h\\
+\midrule
+\multicolumn{2}{@{}l}{Razem w tygodniu} & \textbf{2,00 h}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Policzmy to, co da się policzyć z danych. Mąki zużywasz \(500 + 450 + 500 + 500 = 1950\) g, czyli 1,95 kg. Masa ciasta to \val{bread.1.mass} + \val{bread.2.mass} + \val{bread.4.mass} + \val{bread.5.mass} = 3448 g, z czego około połowę stanowi woda, zgodnie z tabelą nawodnienia w Dodatku B. Cztery wypieki to cztery bochenki, jeden zakwasowy, jedna blacha focaccii i jedna porcja bułek.
+
+Koszt mąki zależy od ceny, której tu nie znam. Przyjmuję 4 zł za kilogram mąki pszennej. To założenie, nie dana: wstaw cenę ze swojego sklepu. Przy tym założeniu jeden wypiek z 500 g mąki kosztuje 2 zł, zakwas z 450 g kosztuje 1,80 zł, a cały tydzień \(1{,}95 \times 4 = 7{,}80\) zł. W tej sumie nie ma zakwasu startera, drożdży ani soli, bo ich ilości są małe, a cena nie jest tym, co zmienia decyzję. Jeśli cena mąki w twoim mieście jest inna, pomnóż 1,95 kg przez nią.
+
+Czas aktywny sumuje się do dwóch godzin w tygodniu. Szablon A z Dodatku C wpisuje chleb jako 0,5 h dziennie, i to jest prawdziwe tylko dla dnia, w którym zamieszanie wieczorem i pieczenie rano dotyczą tej samej doby. Czwarty cykl z tabeli to 0,5 h, ale rozłożone na dwa dni. Średnio wychodzi \(2{,}00 / 7 \approx 0{,}3\) h dziennie, czyli około 17 minut. Nie nazywaj tego czasem wolnym, bo to czas, w którym musisz być w domu o określonej godzinie.
+
+\begin{center}\small
+\textbf{Dla wygody: czasy wszystkich receptur z tej strony.}\\[0.3em]
+\generated{recipe-timing}
+\end{center}
+
+\section{Weekend: focaccia i bułki}
+
+Focaccia i bułki są weekendowe z jednego powodu: obie mają długie zimno, a plan dnia roboczego zaczyna się o 09:00. Focaccia ma 16 godzin zimna i godzinę pokojowej. Zamieszanie w piątek o 20:15 kończy się o 20:30, więc w sobotę o 12:30 wyjmujesz ciasto z lodówki, do 13:30 leży w cieple, a pieczesz 25 minut w 230\,\textdegree{}C. Wychodzi około 13:55, czyli na obiad. Ten wypiek nie wymaga żadnej pracy w środku dnia roboczego.
+
+Bułki mają 10 godzin zimna i godzinę pokojowej. Zamieszanie w sobotę o 09:30 kończy się o 09:45, zimno trwa do 19:45, pokojowa do 20:45, a pieczenie 18 minut w 220\,\textdegree{}C kończy się około 21:03. To wypiek wieczorny, a nie poranny, i to jest koszt, który musisz zapisać. W sobotę przesuwasz sen na 22:00, żeby wyjęcie bułek nie kolidowało z zasypianiem. Przesunięcie o godzinę w sobotę to koszt tego planu, nie szczegół, który można pominąć. Jeśli nie chcesz go ponosić, pomiń bułki w tygodniu i zostaw je na dzień, w którym kolacja jest późniejsza.
+
+Jeśli robisz focaccię i bułki w tym samym tygodniu co zakwas, zaplanuj kolejność tak, żeby nie mieszać dwóch rzeczy w jednym wieczorze. W piątek zamieszanie focaccii zajmuje 15 minut, a pieczenie zakwasu już się skończyło, więc nic się nie zderza. W sobotę zderzenie jest na wyższym poziomie: rano mieszasz bułki, w środku dnia pieczesz focaccię, wieczorem formujesz bułki. Trzy krótkie okna zamiast jednego długiego to sposób, w jaki da się to utrzymać przez tydzień.
+
+Nie jest to konieczne, ale w sobotę i niedzielę możesz zrobić więcej: w tabeli szablonu C chleb ma 2 godziny aktywnie, a plan z tego rozdziału zużywa z nich 0,75 h. Reszta to czas, który zostaje na inne rzeczy, a nie na upychanie kolejnego wypieku.
+
+\section{Mrożenie i to, czego ten harmonogram nie obejmuje}
+
+Chleb upieczony w tygodniu nie musi być zjedzony tego samego dnia. Po ostygnięciu kroisz go na porcje i zamrażasz, a wyjmujesz tyle, ile zjesz. Pieczesz więc raz i jesz przez kilka dni, bez zmiany harmonogramu. Nie podaję tu, jak długo taki chleb zachowuje jakość, bo zależy to od receptury, opakowania i zamrażarki; sprawdź to na swoim chlebie i zapisz wynik.
+
+Warto też zaplanować zapas z wyprzedzeniem. Jeśli w tygodniu piekarnika nie będzie, bo masz podróż albo chorobę, nie zamrażaj wtedy niczego na zapas, tylko zapisz, co wypadło. Plan z tego rozdziału zakłada cztery wypieki, a nie ich komplet za wszelką cenę. Brak jednego wypieku oznacza w tygodniu mniej mąki, mniej czasu aktywnego i mniej chleba w zamrażarce, a nie awarię.
+
+Ten rozdział nie obejmuje ciast wielkanocnych. Babka, mazurek drożdżowy czy kulich mają inną recepturę: więcej tłuszczu, cukru i jajek, często inną fermentację. Nie przenoś godzin z tabeli wprost na takie ciasto, bo cykl zimna i pokojowej nie jest tam dane. Jeśli chcesz piec je w tym samym rytmie, najpierw przetestuj jedno ciasto na dwóch wieczorach, a dopiero potem planuj tydzień.
+
+\section{Kiedy coś idzie źle}
+
+Najczęściej psuje się jeden z dwóch etapów. Pierwszy to ciasto zbyt zimne: wyjęte z lodówki i od razu formowane nie rośnie. Fermentacja w zimnie zwalnia niemal do zera, a faza pokojowa jest po to, żeby ciasto się ogrzało i rozrosło. Naprawa jest prosta, ale nie szybka. Nie podnoś temperatury piekarnika, nie dodawaj drożdży, nie skracaj pieczenia. Daj ciastu więcej czasu w cieple, zanim je uformujesz, i przesuń pieczenie. Jeśli problem wraca, zmień plan, a nie ciasto: wydłuż fazę pokojową w planie albo przesuń zamieszanie, tak by zimno trwało krócej.
+
+Zakwas wymaga osobnej uwagi, bo nie jest drożdżami z torebki. Jeśli przed zamieszaniem zakwas nie urósł zauważalnie po karmieniu, ciasto wychodzi słabe, nawet gdy cały przebieg był poprawny. Zanim zaplanujesz zakwas na czwartek, sprawdź go w środę wieczorem, a nie w czwartek o 20:15, kiedy masz już odmierzoną mąkę i wodę. Taki sprawdzian zajmuje minutę i chroni przed wypiekiem, którego nie da się uratować w trakcie.
+
+Drugi to przefermentowanie. Ciasto po zbyt długim czasie w cieple, zwłaszcza w lecie, kiedy kuchnia jest cieplejsza, opada przy formowaniu, jest lepkie i ma kwaśny smak. Tego nie cofniesz. Upieczesz z tego chleb gęstszy, ale jadalny. Zapobieganie polega na skracaniu fazy pokojowej, gdy jest ciepło, i na formowaniu wcześniej, niż mówi plan. Zapisuj, ile czasu minęło i jaka była temperatura w kuchni, żeby następnym razem wiedzieć, co zmienić.
+
+\begin{falle}
+\textbf{Pułapka: wyjąć z lodówki i piec od razu.} Hasło \glqq ciasto ma 12 godzin w lodówce, więc pieczesz o 09:00\grqq{} myli zimno z pieczeniem. Po 12 godzinach w lodówce ciasto jest zimne i prawie się nie rozrasta. Pieczenie zaczyna się dopiero po fazie pokojowej: 1,5 godziny dla drożdżowego, 4 godziny dla zakwasu, 1 godzina dla focaccii i bułek. Pomijając fazę pokojową, dostajesz zbitą, płaską bułkę z wyraźnie zimnym środkiem.
+\end{falle}
+
+\begin{piekarnik}
+Nagrzej piekarnik tak, żeby był gotowy w chwili wkładania ciasta, a nie po nim. Jeśli wkładasz blachę do zimnego piekarnika, pieczenie trwa dłużej i wychodzi inne. Termometr do piekarnika kosztuje mało i pokazuje, czy ustawienie na pokrętle zgadza się z rzeczywistością. Zanim pierwszy raz zaplanujesz tydzień na podstawie czasów z tabeli, sprawdź, czy twój piec robi to, co na tabliczce.
+\end{piekarnik}
+
+\begin{cwiczenia}
+\exitem{Mieszasz ciasto drożdżowe od 20:45 do 21:00 i wkładasz je do lodówki o 21:00. O której wyjmiesz je, jeśli chcesz dokładnie 12 godzin zimna?}{O 09:00. Od 21:00 do 09:00 mija 12 godzin, czyli dokładnie tyle, ile podaje przepis.}
+\exitem{Ile czasu aktywnego ma jeden cykl chleba drożdżowego i jak się to ma do szablonu A?}{15 minut wieczorem i 15 minut rano, razem 30 minut, czyli 0,5 h. To zgadza się z wierszem Chleb (czas aktywny) w szablonie A, który zakłada dzień z pełnym cyklem.}
+\exitem{Ile kilogramów mąki zużywasz w tygodniu z czterema wypiekami z tego rozdziału?}{500 + 450 + 500 + 500 = 1950 g, czyli 1,95 kg. Mąka w zakwasie, którą zawiera starter, nie jest wliczona.}
+\exitem{Ile kosztuje cały tydzień mąki, jeśli przyjmiesz cenę 4 zł za kilogram, i ile kosztuje jeden wypiek z 500 g mąki?}{Jeden wypiek kosztuje 2 zł. Tydzień kosztuje $1{,}95 \times 4 = 7{,}80$ zł. Pamiętaj, że cena jest założeniem, które musisz podmienić na swoją.}
+\exitem{Mieszasz zakwas w czwartek o 20:15 i wyjmujesz go w piątek o 09:00. O której zaczyna się pieczenie i o której się kończy?}{Faza pokojowa trwa 4 godziny, więc pieczenie zaczyna się o 13:00. Pieczenie trwa 45 minut, więc chleb wychodzi o 13:45.}
+\exitem{Bułki mieszasz w sobotę o 09:30 i zimno trwa 10 godzin. Kiedy wyjmujesz je z lodówki i kiedy kończy się faza pokojowa?}{Wyjmujesz je o 19:45, a faza pokojowa trwa godzinę, więc kończy się o 20:45. Pieczenie zaczyna się wtedy, a nie wcześniej.}
+\exitem{Ciasto po czterech godzinach w cieple wciąż wygląda na zbyt zimne i rośnie wolno. Co robisz?}{Daj mu więcej czasu w cieple i przesuń pieczenie. Nie podnoś temperatury piekarnika i nie dodawaj drożdży, bo to zmienia smak i strukturę, a nie problem z fermentacją.}
+\exitem{Chcesz zamrozić upieczony chleb. Co robisz przed zamrożeniem?}{Studzisz go do temperatury pokojowej, kroisz na porcje i pakujesz. Trwałości w zamrażarce nie podaję liczbą, bo zależy od receptury i opakowania; sprawdzasz ją na swoim chlebie.}
+\end{cwiczenia}
+
+\zadanie{Przez cały tydzień zapisuj godziny zamieszania, wyjęcia z lodówki i wyjęcia z pieca, i przelicz sumę czasu aktywnego i zużytej mąki z tabeli tego rozdziału. Sukces: masz jeden wypiek, który wyszedł według harmonogramu, a w dzienniku wpisane co najmniej dwie różnice między planem a tym, co zrobiłeś, z przyczyną każdej.}
