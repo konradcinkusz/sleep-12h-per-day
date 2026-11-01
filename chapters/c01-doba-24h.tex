@@ -1,0 +1,123 @@
+\chapteropen{01}
+
+\begin{cele}
+\item policzyć, ile godzin zostaje w dobie po odjęciu snu, i zapisać to jako budżet, a nie jako życzenie;
+\item rozpisać dzień roboczy w blokach, które sumują się dokładnie do 24 godzin;
+\item odczytać szablony tygodnia i wskazać, skąd bierze się wolny czas i ile go jest;
+\item stosować zasadę „najpierw sen, resztę dopasuj” i nazwać jej koszt;
+\item zapisać własną dobę w blokach i sprawdzić ją sumą.
+\end{cele}
+
+\section{Doba ma dwadzieścia cztery godziny}
+
+Zacznijmy od rachunku, który da się zrobić w pamięci: $24 - 12 = 12$. Jeśli śpisz dwanaście godzin na dobę, przez resztę doby masz dwanaście godzin na wszystko inne: pracę, jedzenie, dom, chleb, ruch i odpoczynek. Nie ma trzynastej godziny. Nie ma też godziny, która przepadnie bez śladu, bo jej nie zapisałeś. Cała ta książka opiera się na tym jednym odejmowaniu.
+
+Słowo „budżet” użyto tu dosłownie. Budżet to suma, którą wolno wydać, i lista pozycji, z których się składa. Doba jest budżetem zamkniętym: każda pozycja zabiera coś z tej samej puli i nie ma nadwyżki, z której można pokryć resztę. Kiedy zapisujesz dzień jako budżet, zmienia się pytanie. Zamiast „kiedy znajdę czas na chleb?” pytasz „które z dwunastu godzin oddaję chlebowi?”. Drugie pytanie ma odpowiedź. Pierwsze zwykle kończy się poczuciem winy.
+
+Trzeba też powiedzieć wprost, czego ta książka nie obiecuje. Dwanaście godzin snu to więcej, niż zwykle podaje się jako zalecenie dla dorosłych: \verify{dorośli zwykle potrzebują około 7--9 godzin snu}. Regularnie długi sen bywa też \verify{objawem problemu zdrowotnego, który warto skonsultować z lekarzem}, a nie tylko wyborem stylu życia. Punktem wyjścia tej książki jest dwanaście godzin jako założenie do zaplanowania, a nie zalecenie. Jeśli po kilku tygodniach budzisz się nadal zmęczony, zasypiasz w ciągu dnia albo sen jest przerywany, to informacja dla lekarza, a nie wynik lepszego planowania. Książka nie rozstrzyga, czy dwanaście godzin jest dla ciebie właściwe. Pomaga zaplanować dobę, jeśli tak już śpisz albo chcesz to sprawdzić. Ile snu naprawdę potrzebujesz, rozpatrujemy w rozdziale 2.
+
+\begin{falle}[Pułapka: dwanaście godzin snu nie oznacza dwunastu godzin wolnego]
+Przy dwunastu godzinach snu łatwo pomyśleć, że „dużo zostaje”. Zostaje dwanaście godzin, ale nie zostaje dwanaście godzin odpoczynku. Dojazd, gotowanie, mycie się i sprzątanie zjadają je, zanim cokolwiek zostanie na przyjemności. Wolny czas w tym budżecie to ta część doby, która nie jest przypisana do żadnej innej pozycji. Jak zobaczysz w sekcji 3, bywa jej piętnaście do trzydziestu minut dziennie.
+\end{falle}
+
+\section{Budżet pracy i tego, co obok niej}
+
+Pierwsza pozycja po śnie to zwykle praca. Osiem godzin to rama etatu, a nie zmierzony czas. Jeśli dochodzi dojazd, przerwy na kawę albo czas na przygotowanie się do dnia, każda z tych rzeczy jest osobną pozycją. Pomijanie ich to najczęstszy sposób, w jaki budżet zaczyna kłamać.
+
+Po odjęciu snu i samej pracy zostają cztery godziny:
+\[ 24 - 12 - 8 = 4 \]
+
+Te cztery godziny mają pomieścić wszystko, czego nie ma w pracy. W szablonie pracy zdalnej, bez dojazdu, rozkładają się tak:
+
+\begin{itemize}
+\item ruch i higiena: 1 godzina (prysznic, mycie zębów, spacer albo krótki trening);
+\item posiłki: 1,5 godziny (śniadanie, obiad i kolacja, razem z gotowaniem i sprzątaniem po nich);
+\item dom: 0,5 godziny (pranie, zakupy, sprawy, które nie mogą czekać do soboty);
+\item chleb, czas aktywny: 0,5 godziny (zaprawa, formowanie, nadzór nad wypiekiem);
+\item wolne: 0,5 godziny.
+\end{itemize}
+
+Suma: $1 + 1{,}5 + 0{,}5 + 0{,}5 + 0{,}5 = 4$. Rachunek się zgadza, a to nie przypadek: cała reszta doby jest tą czwórką. Zwróć uwagę na pozycję „chleb, czas aktywny”. Liczy się tu tylko czas, w którym ręce są przy cieście. Długie fermentacje i odpoczynek ciasta nie są w tej tabeli, bo nie zajmują twojej uwagi. Wrócimy do tego w rozdziałach 8 i 9.
+
+\section{Szablony tygodnia}
+
+Dzień roboczy nie jest jeden. Dlatego książka ma trzy szablony, każdy sumujący się do 24 godzin: A dla pracy zdalnej, B dla biura z dojazdem i C dla weekendu. Tabele są generowane z pliku \code{data/week.tsv}, więc liczby w tekście i w tabelach nie mogą się rozjechać:
+
+\generated{week-templates}
+
+Zwróć uwagę na dwie wartości w wierszu „Wolne”. W szablonie A wolne wynosi \val{week.A.free} godziny, czyli 30 minut. W szablonie B wynosi \val{week.B.free} godziny, czyli 15 minut. Sen w obu szablonach to \val{week.A.sleep} godzin, bo sen zapisujemy jako pierwszy i nie przesuwamy go.
+
+Co to znaczy w praktyce? Przy pięciu dniach roboczych w tygodniu wolne zbiera się do $5 \cdot 0{,}5 = 2{,}5$ godziny w szablonie A oraz do $5 \cdot 0{,}25 = 1{,}25$ godziny w szablonie B. To cały tygodniowy odpoczynek, który nie jest pracą, snem, jedzeniem, domem ani chlebem. Wieczór ze znajomymi trwający trzy godziny w szablonie B nie mieści się w jednym dniu. Trzeba go wziąć z innego bloku albo przenieść na weekend.
+
+Szablon C jest dniem weekendowym. Ma \val{week.C.free} godzin wolnego, czyli tam leży większość luzu tygodnia. To także tam warto zaplanować dłuższe pieczenie, bo nie koliduje z pracą.
+
+\begin{przyklad}[Wtorek w szablonie B, krok po kroku]
+Zaczynamy od dwunastu godzin snu i na bieżąco odejmujemy kolejne pozycje od doby:
+\begin{tabular}{@{}lrr@{}}\toprule
+Pozycja & Godziny & Zostaje\\\midrule
+Doba & & 24\\
+Sen & 12 & 12\\
+Praca & 8 & 4\\
+Dojazd & 1 & 3\\
+Ruch i higiena & 0,75 & 2,25\\
+Posiłki & 1,25 & 1\\
+Dom & 0,5 & 0,5\\
+Chleb, czas aktywny & 0,25 & 0,25\\
+Wolne & 0,25 & 0\\\bottomrule
+\end{tabular}
+
+Na końcu zostaje zero. Dzień jest szczelny: nie ma godziny bez nazwy. Jeśli ostatnia pozycja wychodziłaby ujemna, znaczyłoby to, że plan jest niewykonalny, zanim wstaniesz z łóżka.
+\end{przyklad}
+
+\section{Zasada: najpierw sen, resztę dopasuj}
+
+\begin{zasada}[Najpierw sen]
+Sen wpisujesz pierwszy, w ustalonej godzinie zaśnięcia i wstania. Nie przesuwasz go, żeby zmieścić coś innego. Wszystko inne dopasowujesz do tego, co zostało.
+\end{zasada}
+
+Dlaczego kolejność ma znaczenie? Jeśli sen wpiszesz na końcu, dostanie on to, co zostanie po pracy, dojazdach i wieczornych sprawach. Wieczór zawsze znajdzie coś, co wydaje się pilniejsze niż sen, i najłatwiej zabrać je właśnie stamtąd. Wpisany na początku sen staje się stałą, a niedobór pozostałych godzin staje się widoczny na papierze. To drugie jest dla planowania równie ważne jak pierwsze.
+
+Weźmy zmianę, która zdarza się w prawdziwym życiu. Dojazd do biura wydłuża się o pół godziny. W szablonie A wolne wynosi \val{week.A.free} godziny, więc zjada je całe, do zera. Kolejne pół godziny nie ma już skąd wziąć: trzeba zabrać z posiłków (1,5 do 1 godziny) albo z ruchu i higieny (1 do 0,5 godziny). Nie da się dodać godziny do doby. Da się tylko przesunąć ją z jednego bloku do drugiego, i tę decyzję warto zapisać, zamiast zostawiać ją do wieczora.
+
+\section{Koszty tej decyzji}
+
+Decyzja „najpierw sen” ma koszty i trzeba je nazwać. Pierwszym jest życie towarzyskie. Dwanaście godzin snu i osiem godzin pracy zajmują dwadzieścia godzin doby. Wszystko, co nie jest pracą ani snem, mieści się w czterech godzinach, razem z dojazdem, jedzeniem i domem. Kolacja z przyjaciółmi, wyjście na koncert czy wizyta u rodziny nie są w żadnym z trzech szablonów. Są możliwe, ale zabierają z wolnego, z domu albo z posiłków. Jeśli zdarzają się częściej niż kilka razy w tygodniu, budżet pęknie, zanim zauważysz, dlaczego.
+
+Drugim kosztem jest ruch. Pozycja „ruch i higiena” ma godzinę, a to jedna pozycja, nie dwie. Trening trwający czterdzieści pięć minut z prysznicem po nim nie mieści się w niej bez zmiany czegokolwiek innego. Można to rozwiązać na dwa sposoby: przenieść trening do innego dnia albo zrobić krótszy ruch w tygodniu i dłuższy w weekend. Oba wybory są w porządku, ale oba trzeba zapisać. Wiedza o tym, że regularny ruch \verify{sprzyja zdrowemu snu, a efekt zależy od rodzaju wysiłku i pory dnia}, nie zmienia tego, że jego czas trzeba wziąć skądś.
+
+\begin{uwaga}[Szablony nie są zaleceniem]
+Liczby w szablonach są punktem wyjścia. Twoja praca, dojazd, rodzina i miejsce zamieszkania zmienią je od razu. Szablon jest sprawdzianem spójności: jeśli twój plan nie sumuje się do 24 godzin, coś jest w nim zmyślone albo pominięte.
+\end{uwaga}
+
+\section{Metoda: zapisz swoją dobę w blokach}
+
+Teraz pracujesz na własnej dobie. Metoda ma sześć kroków i wszystkie są arytmetyczne.
+
+\begin{enumerate}
+\item Zapisz sen jako pierwszy blok: godzinę zaśnięcia i godzinę wstania, na przykład 22:00 do 10:00. To dwanaście godzin i nie zmieniasz ich w dalszych krokach.
+\item Wpisz stałe bloki: pracę, dojazd, zajęcia, które są w kalendarzu. Każdy z nich ma godziny początku i końca.
+\item Resztę rozpisz na pozycje z szablonu, ale w minutach, a nie w ułamkach. Godzina to 60 minut, pół godziny to 30, trzy kwadranse to 45. Ułamki są trudne do sprawdzania w głowie; minuty nie są.
+\item Zsumuj wszystkie bloki. Wynik ma być równy 24 godzinom, czyli 1440 minutom.
+\item Jeśli suma przekracza 24 godziny, zabierz najpierw z pozycji „wolne”, potem z elastycznych: posiłków, ruchu, domu. Nie zabieraj z snu. Jeśli suma jest mniejsza, nazwij brakującą godzinę, zamiast zostawiać ją bez nazwy.
+\item Zapisz dzień tak, jak faktycznie przebiegł, przez siedem dni. Plan i rzeczywistość to dwie różne tabele i obie są potrzebne.
+\end{enumerate}
+
+\begin{przyklad}[Ta sama doba w minutach]
+Dzień roboczy w szablonie A zapisany w minutach: sen 720, praca 480, ruch i higiena 60, posiłki 90, dom 30, chleb 30, wolne 30. Suma: $720 + 480 + 60 + 90 + 30 + 30 + 30 = 1440$. To dokładnie 24 godziny. Jeśli w rzeczywistości posiłki zajęły 105 minut, a wolne ma być 15, suma nadal wynosi 1440, bo przesunęliśmy piętnaście minut z jednej pozycji do drugiej. Różnica jest widoczna i ma nazwę.
+\end{przyklad}
+
+\section{Co ten rozdział zakłada, a czego nie wie}
+
+Rozdział nie wie, jak dobrze będzie ci się spało przy dwunastu godzinach. Nie wie, czy twój lekarz zobaczy w tym problem, ani czy twoja praca pozwala na elastyczność. Wie tylko, że doba ma dwadzieścia cztery godziny, że sen zajmuje z nich dwanaście i że pozostałe dwanaście trzeba rozdzielić świadomie. Każdy następny rozdział to rozdzielanie kolejnych pozycji i sprawdzanie, czy suma wciąż się zgadza.
+
+\begin{cwiczenia}
+\exitem{Ile godzin zostaje w dobie po odjęciu dwunastu godzin snu? Zapisz rachunek.}{$24 - 12 = 12$. Dwanaście godzin na wszystko, co nie jest snem.}
+\exitem{W szablonie A wypisz wszystkie pozycje inne niż sen i zsumuj je. Czy wychodzi 12 godzin?}{Praca 8, ruch i higiena 1, posiłki 1,5, dom 0,5, chleb 0,5, wolne 0,5. Razem 12 godzin, bo $8 + 4 = 12$.}
+\exitem{Ile minut wolnego jest w szablonie B, a ile w szablonie A?}{Szablon B: \val{week.B.free} godziny, czyli 15 minut ($0{,}25 \cdot 60$). Szablon A: \val{week.A.free} godziny, czyli 30 minut.}
+\exitem{Dojazd w szablonie A wydłuża się o pół godziny. Co się dzieje z wolnym i co musi ustąpić, żeby suma została 24 godziny?}{Wolne spada z 0,5 do zera i znika. Żeby suma została 24, trzeba zabrać pół godziny z innej pozycji, na przykład z posiłków (1,5 do 1) albo z ruchu i higieny (1 do 0,5). Nie można dodać godziny bez zabrania jej skądinąd.}
+\exitem{Ile godzin wolnego zbiera się w tygodniu z pięciu dni roboczych w szablonie B i w szablonie A?}{B: $5 \cdot 0{,}25 = 1{,}25$ godziny. A: $5 \cdot 0{,}5 = 2{,}5$ godziny.}
+\exitem{Dlaczego sen wpisujesz pierwszy, a nie jako ostatni?}{Jako ostatni sen dostaje to, co zostanie po pracy i wieczornych sprawach, a te zawsze zabierają najpierw to, co elastyczne. Wpisany na początku sen staje się stałą, a niedobór reszty jest widoczny na papierze.}
+\exitem{Ile minut to 0,75 godziny i do której pozycji szablonu B należy ta wartość?}{45 minut. To pozycja „ruch i higiena” w szablonie B.}
+\end{cwiczenia}
+
+\zadanie{Zapisz swoją dobę w sześciu do ośmiu blokach, sen wpisz jako pierwszy, a sumę doprowadź do 24 godzin (1440 minut). Przez siedem dni zapisuj obok każdego bloku, ile faktycznie zajął. Miara sukcesu: każdy dzień sumuje się dokładnie do 24 godzin, a na końcu tygodnia wiesz, która pozycja przekraczała plan i o ile minut.}

@@ -1,0 +1,130 @@
+\chapteropen{06}
+
+\begin{cele}
+\item policzyć dobę jako sumę nazwanych bloków i sprawdzić, czy domyka się do 24 godzin;
+\item wybrać szablon dnia roboczego (A albo B) lub weekendowego (C) i dopasować go do swojego tygodnia;
+\item wskazać rezerwę buforową i wiedzieć, kiedy wolno ją wydać, a kiedy nie;
+\item rozpoznać zadania wąskiego gardła i ustawić je w stałym oknie, zanim wpiszesz cokolwiek elastycznego;
+\item przeprowadzić dwudziestominutowe planowanie tygodnia w niedzielę;
+\item w sytuacji, w której budżet się nie domyka, wybrać, co oddać, w kolejności, którą umiesz uzasadnić.
+\end{cele}
+
+\section{Dwadzieścia cztery godziny jako suma bloków}
+
+Plan dnia bywa zbiorem chęci: \glqq poćwiczę\grqq{}, \glqq ugotuję zupę\grqq{}, \glqq odpiszę na maile\grqq{}. Każda z tych chęci kosztuje godziny, a doba jest jedna. Dlatego budżet domykamy inaczej niż listą zadań: każdy blok ma nazwę, długość w godzinach i miejsce w dobie, a suma wszystkich bloków wynosi dokładnie 24.
+
+W tej książce dobę składają osiem bloków. \textbf{Sen} to 12 godzin i jest stałą częścią budżetu; to założenie całej książki, a nie wynik negocjacji. \textbf{Praca} i \textbf{Dojazd} zależą od tego, gdzie pracujesz. \textbf{Ruch i higiena}, \textbf{Posiłki}, \textbf{Dom} i \textbf{Chleb (czas aktywny)} to bloki, które da się skracać, ale tylko do minimum, które sam zapisałeś. \textbf{Wolne} to blok, który łatwo przeoczyć: jest rezerwą i wrócimy do niego w części o buforze.
+
+Zasada jest prosta i zaskakująco trudna do utrzymania: \emph{blok bez długości w godzinach nie istnieje w budżecie}. \glqq Ruch\grqq{} nie jest blokiem. \glqq Ruch, 45 minut po pracy\grqq{} jest blokiem. Dopóki każde słowo w planie nie ma swojej liczby, suma nie ma czego sprawdzić.
+
+\begin{przyklad}[Wtorek w szablonie B]
+Sen 12 + Praca 8 + Dojazd 1 + Ruch 0,75 + Posiłki 1,25 + Dom 0,5 + Chleb 0,25 + Wolne 0,25 = 24.
+Ułamki dziesiętne łatwo przeliczyć na minuty: 0,75 h to 45 minut, 1,25 h to 75 minut, 0,5 h to 30 minut, 0,25 h to 15 minut.
+
+Załóżmy, że we wtorek chcesz dołożyć kurs języka niemieckiego na godzinę. Suma wynosi 25. To nie jest nadwyżka, którą można gdzieś wcisnąć, tylko informacja, że coś trzeba oddać. Zapisz, z czego: z Ruchu, z Domu, z Wolnego albo z innego dnia. Jeśli nie umiesz tego zapisać, kursu we wtorek nie ma.
+\end{przyklad}
+
+\section{Trzy szablony: dzień roboczy, dzień zdalny, weekend}
+
+Nie musisz układać każdego dnia od zera. Wystarczą trzy szablony, z których każdy sumuje się do 24 godzin. Szablon A dotyczy pracy zdalnej, bez dojazdu, z ośmiogodzinną pracą. Szablon B dotyczy biura z dojazdem, w którym dojazd zjada godzinę. Szablon C dotyczy weekendu, w którym nie ma pracy, za to rośnie Dom, Chleb i czas na to, co nie jest obowiązkiem.
+
+\generated{week-templates}
+
+Wolne w szablonach wynosi odpowiednio \val{week.A.free} h w A, \val{week.B.free} h w B i \val{week.C.free} h w C. Dzień zdalny ma więcej Wolnego niż dzień z dojazdem, bo z godziny dojazdu, której w A nie ma, po ćwierć godziny przeszło na Ruch, Posiłki, Chleb i Wolne. Najmniej Wolnego ma więc dzień w biurze, a to on jest najbardziej podatny na poślizg: jeden dłuższy dojazd zużywa cały bufor dnia.
+
+Szablon nie jest obietnicą. Jest punktem wyjścia, który trzeba dopasować do realnych godzin pracy i do realnego dojazdu. Jeśli Twój dojazd trwa 1 h 20 min, a nie godzinę, szablon B nie działa: musi wtedy zmienić się Wolne albo Dom, a nie to, że dojazd \glqq zniknie\grqq{}.
+
+\begin{zasada}[Szablon nie zmienia sumy]
+Dopasowując szablon, zmieniasz rozkład godzin, a nie liczbę godzin w dobie. Jeśli po dopasowaniu suma nie wynosi 24, dopasowanie jest błędne, nie doba.
+\end{zasada}
+
+\section{Rezerwa buforowa, czyli Wolne, które trzeba pilnować}
+
+W tej książce nie ma osobnej rezerwy, bo doba jest w całości zaplanowana. Rezerwą jest blok \textbf{Wolne}. To on przyjmuje przesunięcia: spóźniony autobus, dłuższa kolejka w sklepie, zadanie w pracy, które zjadło pół godziny ponad plan. Bez takiego bloku każde przekroczenie oznacza, że coś zostaje przycięte w sposób, którego nie zaplanowałeś, zwykle w śnie, bo sen jest jedynym blokiem, który nie ma nazwy \glqq do wzięcia\grqq{}.
+
+Warto policzyć, ile rezerwy masz naprawdę. W tygodniu z pięcioma dniami według szablonu B i dwoma według C Wolne wynosi $5 \cdot 0{,}25 + 2 \cdot 5 = 11{,}25$ h. Tylko 1,25 h z tego przypada na dni robocze. Pozostałe 10 h to weekend. Wniosek jest konkretny: \emph{w tygodniu roboczym masz na przesunięcia około kwadransa dziennie, a większość bufora istnieje dopiero w sobotę.}
+
+Dwie reguły z tego wynikają. Po pierwsze, Wolne służy do przesunięć, a nie do planowania przyjemności. Jeśli wpisujesz w Wolne film, wyjście czy zakupy, to bufor przestaje istnieć jeszcze przed poniedziałkiem. Po drugie, przekroczenie w dzień roboczy większe niż Wolne tego dnia nie może być \glqq nadrobione\grqq{} w tym samym dniu. Musi zostać przeniesione: na weekend albo na inny blok, który zapisałeś jako elastyczny.
+
+Bufor ma też inne ograniczenie: nie służy do naprawiania błędu w szablonie. Jeśli co tydzień przekraczasz Pracę o pół godziny, to nie jest przesunięcie, tylko zła liczba w planie. Wtedy trzeba zmienić szablon albo przyznać, że Praca w tym tygodniu jest dłuższa, a nie wydawać bufor każdego wieczoru. Przegląd w niedzielę, opisany dalej, właśnie rozróżnia jednorazowe zdarzenie od błędu w liczbach.
+
+\begin{falle}[Bufor, który jest w każdym bloku]
+Częsty błąd: każdy blok planuje się z zapasem \glqq na wszelki wypadek\grqq{}. Wtedy Praca to 8 godzin plus pół godziny zapasu, Posiłki to półtorej godziny plus kwadrans zapasu i tak dalej. Suma przestaje się zgadzać, bo zapasy są zapisane w każdym wierszu, a nigdzie nie ma jednego miejsca, z którego wszystkie przekroczenia byłyby pokrywane. Zapas ma być jeden, nazwany, w Wolnym.
+\end{falle}
+
+\section{Wąskie gardło: zadania, które mają jedno okno}
+
+Są zadania, które można przesunąć, i takie, które mają jedno okno czasowe. Ich koszt nie polega na godzinach, tylko na tym, co się stanie, gdy okno zostanie przegapione. Nazywam je wąskim gardłem, bo cała doba musi się wokół nich przepchnąć.
+
+W tym budżecie wąskimi gardłami są zazwyczaj trzy rzeczy. Pierwsza to stałe godziny pracy, na które nie masz wpływu. Druga to odbiór dziecka, wizyta u kogoś albo stałe spotkanie. Trzecia to zadania z biologicznym zegarem: fermentacja, która musi zamknąć się w określonym oknie przed pieczeniem, albo zakwas, który trzeba nakarmić o stałej porze. Szczegóły chleba są w rozdziale 9, tutaj interesuje nas tylko logika ustawiania.
+
+Reguła kolejności jest taka: \emph{najpierw ustaw wąskie gardło w stałym oknie, potem wpisz wszystko, co elastyczne.} Odwrotna kolejność jest kusząca, bo elastyczne bloki wyglądają na ważniejsze, skoro są wypełnione. Wtedy okazuje się, że trzy rzeczy wpisane w tę samą godzinę zostają rozstrzygnięte przez zegar, a nie przez plan. Najczęściej przegrywa ta, która nie daje się zobaczyć, czyli pieczenie o siódmej rano, które \glqq miało się samo\grqq{} zrobić.
+
+\section{Planowanie tygodnia w niedzielę: dwadzieścia minut}
+
+Plan tygodnia nie wymaga dłuższego posiedzenia niż dwadzieścia minut. Dłuższe planowanie zwykle oznacza, że nie ma reguły, tylko są dyskusje. Proponuję cztery kroki i przypisanie każdemu z nich minut.
+
+\begin{enumerate}
+\item \textbf{Pięć minut: przegląd minionego tygodnia.} Który blok przekroczył plan, o ile i dlaczego. Nie oceniasz siebie, tylko liczby. Pytanie jest jedno: czy przekroczenie było jednorazowe, czy powtarzalne.
+\item \textbf{Pięć minut: stałe okna.} Wpisz wszystkie wąskie gardła tygodnia: godziny pracy, odbiory, spotkania, fermentacje. Dopiero wtedy sprawdź, czy wybrane szablony się z nimi zgadzają.
+\item \textbf{Pięć minut: szablon na każdy dzień.} Dla każdego z siedmiu dni wybierz A, B albo C. Zapisz w tabeli przy dniu, jakie Wolne zostaje.
+\item \textbf{Pięć minut: jedno zadanie na przyszły tydzień z miarą sukcesu.} Tylko jedno. Miara sukcesu to coś, co da się sprawdzić w sobotę, np. \glqq trzy razy w tygodniu zrobiony ruch przez 45 minut\grqq{}, a nie \glqq więcej ruchu\grqq{}.
+\end{enumerate}
+
+Planowanie zajmuje 20 minut, czyli 0,33 h. W niedzielę jest to szablon C, w którym blok Dom wynosi 1,5 h. Planowanie wpisujesz do Domu, nie do Wolnego, bo Wolne weekendowe jest buforem na tydzień, który dopiero się zacznie.
+
+\section{Kolejność priorytetów i twarde wybory}
+
+Budżet czasem się nie domyka. Zaplanowałeś 24 godziny, a życie zaproponowało 25. Wtedy trzeba wybrać, co oddać. Lista poniżej ma kolejność, w jakiej zwykle zaczynasz ciąć, i jest jawna, bo wybór pod presją bez wcześniej zapisanej kolejności kończy się cięciem tego, co akurat najbardziej boli.
+
+\begin{enumerate}
+\item \textbf{Elastyczne bloki przesuwasz na weekend:} Chleb (czas aktywny), część Domu, zakupy, sprawy urzędowe, które nie mają terminu w tygodniu.
+\item \textbf{Oddajesz Wolne tygodnia.} To najprostsza transakcja, ale zapisz ją jako dług: jeśli w tygodniu oddałeś 2 h Wolnego, to w następnym tygodniu bufor jest mniejszy o tyle samo.
+\item \textbf{Skracasz Dom do minimum} z rozdziału 7. Minimum jest zapisane, nie wymyślone w biegu.
+\item \textbf{Dopiero potem Ruch i Posiłki}, i tylko do progu, który zapisałeś w planie tygodnia. Nie poniżej.
+\end{enumerate}
+
+Jest też pozycja, której na tej liście nie ma. \textbf{Sen nie jest blokiem do cięcia.} Jest w budżecie, bo cała konstrukcja zakłada te 12 godzin, a nie dlatego, że jest najważniejszy w sensie moralnym. Jeśli każdy tydzień wymaga cięcia snu, to nie jest problem planowania, tylko sygnał, o którym mowa w rozdziale 2.
+
+Przykład wyboru: w tygodniu z szablonem B potrzebujesz 2 h na załatwienie czegoś w urzędzie w środę. Z Wolnego dni roboczych nie weźmiesz, bo tego dnia są tylko 15 minut. Bierzesz z weekendu: Wolne w sobotę wynosi 5 h, po przesunięciu zostaje 3 h. Tygodniowe Wolne spada z 11,25 h do 9,25 h. Zapis w tabeli mówi wprost, że bufor na przyszły tydzień jest mniejszy i dlaczego.
+
+\begin{falle}[Dorzucanie bez źródła]
+Najczęściej budżet psuje nie jedno duże zobowiązanie, tylko drobne dodatki bez źródła: dwadzieścia minut tu, pół godziny tam, \glqq tylko raz\grqq{}. Każdy z nich przekracza 24 i nikt tego nie widzi, bo nikt nie sumuje. Zasada na to jest jedna: \emph{każde dodanie ma źródło}. Jeśli nie umiesz wskazać, z którego bloku je bierzesz, nie dodajesz go.
+\end{falle}
+
+\section{Tydzień w tabeli godzin}
+
+Poniżej tydzień złożony z pięciu dni według szablonu B i dwóch dni według szablonu C. Kolumna pierwsza to jeden dzień roboczy, kolumna druga to jeden dzień weekendowy, kolumna trzecia to suma tygodnia: pięć razy kolumna pierwsza plus dwa razy kolumna druga.
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Blok} & \textbf{Dzień roboczy (B)} & \textbf{Weekend (C)} & \textbf{Tydzień} \\
+\midrule
+Sen & 12 & 12 & 84 \\
+Praca & 8 & 0 & 40 \\
+Dojazd & 1 & 0 & 5 \\
+Ruch i higiena & 0,75 & 1,5 & 6,75 \\
+Posiłki & 1,25 & 2 & 10,25 \\
+Dom & 0,5 & 1,5 & 5,5 \\
+Chleb (czas aktywny) & 0,25 & 2 & 5,25 \\
+Wolne & 0,25 & 5 & 11,25 \\
+\midrule
+\textbf{Razem} & \textbf{24} & \textbf{24} & \textbf{168} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Sprawdzenie: kolumna dnia roboczego sumuje się do 24, kolumna weekendu do 24, a suma tygodnia do 168, czyli $7 \cdot 24$. Każdy wiersz tygodnia też jest policzony: Sen to $5 \cdot 12 + 2 \cdot 12 = 84$, Wolne to $5 \cdot 0{,}25 + 2 \cdot 5 = 11{,}25$. Dla tygodnia z szablonem A (pięć dni według A, dwa według C) suma również wynosi 168, a Wolne wynosi 12,5 h: $5 \cdot 0{,}5 + 2 \cdot 5 = 12{,}5$. Wolne dnia roboczego to w A \val{week.A.free} h, w B \val{week.B.free} h. Różnica w tygodniu roboczym to tylko 1,25 h, ale to ona decyduje, czy pierwszy poślizg zostanie wchłonięty we wtorek, czy przeniesiony na weekend.
+
+\zadanie{Przez jeden tydzień prowadź tabelę godzin w formie z tego rozdziału: przy każdym dniu zapisz szablon, a po zakończeniu każdego dnia wpisz, ile minut z Wolnego zużyłeś i na co. Pod koniec tygodnia dodaj kolumnę ze swoimi realnymi godzinami. Miara sukcesu: suma każdego dnia wynosi dokładnie 24 h, także w dni, w których coś poszło źle; w dniach roboczych przekroczenie nie przekracza 15 minut Wolnego, a każde większe przekroczenie ma zapisany blok, z którego je oddałeś albo dzień, na który je przeniosłeś.}
+
+\begin{cwiczenia}
+\exitem{Zsumuj szablon B i pokaż, że daje 24 h.}{12 + 8 + 1 + 0,75 + 1,25 + 0,5 + 0,25 + 0,25 = 24. Kolumna dnia roboczego w tabeli również sumuje się do 24.}
+\exitem{Dorzucasz we wtorek kurs na godzinę. Co oddajesz?}{Wolne we wtorek to 0,25 h, więc nie wystarczy. Wybierz jedno: przesuń kurs na sobotę (w weekendzie Wolne wynosi 5 h) albo oddaj 45 minut z Ruchu, pod warunkiem, że zostaje minimum zapisane w planie. Bez wskazania źródła kursu nie dodajesz.}
+\exitem{Ile Wolnego masz w tygodniu z pięcioma dniami według B i dwoma według C, i ile z tego przypada na dni robocze?}{Łącznie 11,25 h, z czego 1,25 h w dniach roboczych (5 razy 0,25 h), a 10 h w weekend (2 razy 5 h).}
+\exitem{Dojazd trwa 1 h 40 min zamiast planowanej godziny. Ile musisz oddać i skąd?}{Przekroczenie to 40 minut. Wolne tego dnia to 15 minut, więc brakuje 25 minut. Oddajesz je z Domu na sobotę, a nie z Posiłków czy Ruchu, bo tam obowiązuje zapisane minimum.}
+\exitem{Które zadanie ustawiasz najpierw: elastyczne zakupy czy odbiór dziecka o stałej godzinie?}{Odbiór o stałej godzinie. Jest wąskim gardłem: ma jedno okno i jego przegapienie nie da się nadrobić. Zakupy wpisujesz w to, co zostanie.}
+\exitem{Ile minut zajmuje niedzielne planowanie i z którego bloku je bierzesz?}{Dwadzieścia minut, czyli 0,33 h. Bierzesz je z Domu, bo w niedzielę Dom wynosi 1,5 h, a Wolne weekendowe jest buforem na tydzień, który się dopiero zacznie.}
+\exitem{Dlaczego Sen nie znajduje się na liście bloków do cięcia w twardych wyborach?}{Bo 12 godzin snu jest założeniem budżetu, a nie elastycznym blokiem. Gdy każdy tydzień wymaga cięcia snu, problem nie leży w planie tygodnia, tylko wraca do pytania z rozdziału 2.}
+\end{cwiczenia}

@@ -1,0 +1,115 @@
+\chapteropen{08}
+
+\begin{cele}
+\item policzyć czas aktywny i bierny wypieku z długą fermentacją i ustalić, gdzie w dobie mieści się sen;
+\item odczytać przepis w procentach piekarskich i sprawdzić, czy nawodnienie mieści się w zakresie, z którym da się pracować;
+\item wybrać między zakwasem a drożdżami, licząc czas, pracę i ryzyko zaniedbania;
+\item rozpoznać sytuacje, w których gorący piekarnik i surowe ciasto wymagają zasad bezpieczeństwa.
+\end{cele}
+
+\section{Czas, który nie wymaga Twojej uwagi}
+
+Chleb to w praktyce trzy czynności: zmieszanie składników, wyrośnięcie ciasta i pieczenie. Pierwsza i trzecia trwają krótko. Druga trwa najdłużej, ale prawie nie wymaga rąk. Dla tej książki ważne jest rozróżnienie między \emph{czasem aktywnym}, w którym musisz coś zrobić, a \emph{czasem biernym}, w którym ciasto pracuje samo. Różnica między nimi bywa ogromna.
+
+Przy typowym przepisie z tej książki czas aktywny to zwykle od 20 do 30 minut, wliczając ważenie, mieszanie, formowanie i włożenie do piekarnika\verify{ (to szacunek autora, nie wynik pomiaru w różnych kuchniach)}. Reszta to fermentacja: w zależności od przepisu od kilku do kilkunastu godzin. Czas aktywny jest więc stały i mały, a czas bierny rośnie, kiedy dasz ciastu zimno.
+
+Na tym opiera się cała teza rozdziału. Sen trwa długo i przerywa dzień w jednym bloku. Chleb ma dokładnie taką strukturę: krótką część, w której jesteś potrzebny, i długą, w której nie musisz być. Jeśli ułożysz ją tak, że długa część przypada na noc, po przebudzeniu zostaje już tylko pieczenie. Nie jest to sztuczka. To zwykła arytmetyka doby, którą już znasz z rozdziału pierwszego.
+
+\section{Przykład: jeden dzień z chlebem drożdżowym na zimno}
+
+Pierwszy przepis w tabeli to chleb drożdżowy na zimno. Podaje cztery składniki i trzy czasy: 12 godzin w lodówce, 1,5 godziny w temperaturze pokojowej i 40 minut pieczenia w 230\,°C. Ułóżmy z nich harmonogram względem snu, który trwa od 21:30 do 9:30.
+
+\begin{przyklad}
+\textbf{Wieczór, 21:00.} Mieszasz 500\,g mąki, 350\,g wody, 10\,g soli i 2\,g drożdży. Wyrabiasz krótko, formujesz, wkładasz ciasto do pojemnika i zamykasz pokrywką. To około kwadransa pracy.
+
+\textbf{21:15.} Pojemnik idzie do lodówki. Od tej chwili ciasto fermentuje w zimnie przez 12 godzin.
+
+\textbf{21:30--9:15.} Śpisz. Lodówka pracuje za Ciebie.
+
+\textbf{9:15.} Wyjmujesz pojemnik i zostawiasz go na 1,5 godziny w cieple, do ponownego wyrośnięcia\verify{ (to zwyczajowe ustawienie dla tego typu ciasta, nie wynik badania)}.
+
+\textbf{10:30.} Włączasz piekarnik na 230\,°C. Rozgrzewanie wymaga kilkunastu minut, więc nie opóźniaj tego.
+
+\textbf{10:45.} Pieczesz 40 minut. Chleb wychodzi około 11:25.
+
+Od formowania do wyjęcia mija 14 godzin 10 minut: 12 godzin, 1,5 godziny i 40 minut. Aktywnie poświęcasz wieczorem kilkanaście minut, rano kilkanaście, razem nieco mniej niż godzinę\verify{ (szacunek; zależy od tempa pracy)}.
+\end{przyklad}
+
+Zwróć uwagę, czego w tym harmonogramie nie ma: nie ma żadnej czynności w środku nocy. Nie musisz wstawać, żeby zmienić temperaturę albo przełożyć ciasto. Jeśli jest to dla Ciebie zbyt wiele, ten konkretny przepis w ogóle nie wymaga zmiany tego planu.
+
+\section{Procenty piekarskie: jak czytać przepis}
+
+Przepisy piekarskie zapisuje się w \emph{procentach piekarskich}. Zasada jest prosta: masa mąki to zawsze 100\%, a każdy inny składnik podaje się jako procent masy mąki. Dzięki temu przepis nie zależy od tego, czy piekarz zrobi jeden bochenek, czy dziesięć.
+
+Dla chleba drożdżowego z tabeli mąki jest 500\,g, wody 350\,g. Nawodnienie, czyli stosunek wody do mąki, wynosi $350 / 500 = 0{,}70$, czyli \val{bread.1.hydration}\%. Sól to $10 / 500 = 2\%$. Drożdże to $2 / 500 = 0{,}4\%$ mąki.
+
+Zakwas wymaga osobnego rachunku, bo sam jest mieszaniną mąki i wody. Przyjmujemy umownie, że zakwas o nawodnieniu 100\% składa się w połowie z mąki, a w połowie z wody. Przepis na chleb pszenny z zakwasem ma 500\,g mąki, 400\,g wody i 150\,g zakwasu. Mąki jest więc $500 + 75 = 575$\,g, a wody $400 + 75 = 475$\,g. Nawodnienie wynosi $475 / 575 \approx 0{,}826$, czyli \val{bread.3.hydration}\%.
+
+To ważne, bo intuicja podpowiada zwykle, że zakwas „to właściwie woda i mąka” i wlicza się go w całości do jednej z nich. Ta pomyłka przesuwa wynik o kilka punktów procentowych, a przy dużej ilości zakwasu nawet więcej.
+
+W tabeli, którą generuje skrypt z pliku danych, masz wszystkie \val{breads.total} przepisów wraz z masami i nawodnieniem:
+
+\generated{recipes}
+
+Zakres nawodnienia w tej tabeli sięga od \val{bread.hydration.min}\% w bułkach do \val{bread.hydration.max}\% w ciabacie. Wyższe nawodnienie daje bardziej otwarty miękisz, ale ciasto jest trudniejsze w obsłudze i łatwiej się rozlewa\verify{ (opis praktyczny; nie pomiar)}. Dla początkującego rozsądnym punktem wyjścia jest środek zakresu, a nie jego skraj.
+
+Dwie uwagi praktyczne. Po pierwsze, waga kuchenna musi ważyć z dokładnością do grama. Drożdże w przepisie to 2\,g; błąd 0,5\,g to już ćwierć całej porcji drożdży. Po drugie, przepis podany w gramach nie jest przepisem podanym w procentach, dopóki nie przeliczysz go na mąkę. Zanim zaczniesz, policz nawodnienie i porównaj je z tabelą.
+
+\section{Fermentacja na zimno: co zmienia lodówka}
+
+Drożdże i bakterie fermentacji pracują w każdej temperaturze, ale w niskiej pracują wolniej. Lodówka nie zatrzymuje fermentacji. Ona ją rozciąga. To jest mechanizm, który pozwala zamienić jeden dzień pracy na jeden dzień i jedną noc czasu biernego.
+
+Tabela czasów pokazuje dwa etapy. Kolumna \emph{zimno} to czas w lodówce, a kolumna \emph{pokojowa} to czas w cieple, zwykle przed pieczeniem. Obie pozwalają ułożyć harmonogram:
+
+\generated{recipe-timing}
+
+Czasy w lodówce mieszczą się w tabeli od 8 do 16 godzin. Najkrótszy wypiek to chleb tostowy, najdłuższe to focaccia i bagietki. Dla każdego przepisu znajdziesz ten sam wzorzec: długi etap zimny, potem krótki etap ciepły.
+
+Sam etap zimny ma jeszcze jedną zaletę poza czasem. Zimne ciasto łatwiej się formuje, bo jest mniej lepkie. To praktyczne, nie wymaga żadnej wiedzy technicznej\verify{ (obserwacja typowa dla ciast o wysokim nawodnieniu; warto sprawdzić na własnej mące)}.
+
+Pamiętaj o bezpieczeństwie żywności. Ciasto w lodówce to ciasto surowe. Trzymaj pojemnik przykryty, nie stawiaj go obok produktów, które już są gotowe do jedzenia, i nie przedłużaj etapu zimnego ponad czas z tabeli bez powodu. Temperatura lodówki powinna być niska, ale konkretna wartość zależy od urządzenia\verify{ (zalecana temperatura przechowywania żywności w chłodzie wymaga sprawdzenia w źródle)}.
+
+\section{Zakwas czy drożdże: wybór bez mitów}
+
+Drożdże w przepisie to kilka gramów. Zakwas to ponad sto gramów, które trzeba utrzymać przy życiu. Różnica w ilości mówi więcej niż wiele opisów.
+
+Tabela pokazuje to też w czasie. Przepisy na zakwasie mają długi etap w cieple: cztery i pięć godzin. Przepisy na drożdżach mają zwykle od jednej do półtorej godziny. Jeśli planujesz wieczorną fermentację i poranne pieczenie, zakwas będzie mniej wygodny przy jednym wypieku dziennie, bo wymaga dłuższego etapu w cieple, który musi przypaść na rano.
+
+Zakwas wymaga też regularności. Trzeba go karmić świeżą mąką i wodą, a jeśli zostanie zaniedbany, traci aktywność\verify{ (częstotliwość karmienia zależy od temperatury i rodzaju zakwasu; nie podaję jednej liczby)}. Drożdże suche czy świeże nie wymagają takiej opieki, ale trzeba je kupić i sprawdzić datę przydatności.
+
+Zakwas daje chleb o innym smaku i trwałości. Przepis z drożdżami jest prostszy i szybszy. Dla kogoś, kto chce jednego chleba tygodniowo bez utrzymywania kultury, drożdże są rozsądnym wyborem. Dla kogoś, kto ma już zakwas i lubi jego smak, nie ma powodu z niego rezygnować.
+
+\section{Dlaczego chleb, a nie coś bardziej pracochłonnego}
+
+Chleb nie jest jedynym wypiekiem, który da się zrobić w rytmie snu. Warto jednak zrozumieć, dlaczego pasuje tak dobrze. Każdy etap pracy da się przesunąć, a jedyny etap, którego nie da się przesunąć, jest krótki.
+
+Wypieki wymagające wielu składań i chłodzeń w krótkich odstępach są trudniejsze do ułożenia. Każdy krok to godzina, o której trzeba być w kuchni, i jeśli przypada w środku nocy, sen przestaje być ciągły. Chleb z tabeli nie ma tej cechy. Jeden etap przypada wieczorem, drugi rano, a między nimi jest tylko noc.
+
+Trzeba też powiedzieć, czego chleb nie zrobi. Nie zastąpi zbilansowanej diety, nie poprawi snu i nie rozwiąże problemu z czasem. Jeśli dorzucisz go do doby, która już jest przeładowana, dołożysz zadanie do kolejki, a nie oszczędzisz czasu. Ta książka zakłada, że ktoś najpierw ustawił dobę, a dopiero potem wprowadza chleb.
+
+\section{Bezpieczeństwo: gorący piekarnik i ciężkie naczynia}
+
+Piekarnik pracuje w tej książce w temperaturze od 200 do 240\,°C. Powierzchnie wewnątrz i naczynia, w których pieczesz, długo po wyjęciu zostają gorące. Przy pieczeniu w garnku żeliwnym parzy zarówno para, jak i samo naczynie.
+
+\begin{piekarnik}
+Nie włączaj piekarnika przed snem i nie zostawiaj go nagrzanego bez nadzoru. Rozgrzewaj go po przebudzeniu, o godzinie, w której jesteś w kuchni i widzisz zegar. Naczynie wyjmuj w rękawicach, nie chwytaj uchwytu gołą dłonią i odkładaj je na deskę lub podkładkę, nie na blat z tworzywa. Otwierając drzwiczki, odsuń twarz: uchodzi para. Dzieci i zwierzęta trzymaj z dala od strefy wyjmowania.
+\end{piekarnik}
+
+Ostatnia uwaga dotyczy samego snu. Zasada „nie zostawiaj piekarnika bez nadzoru” jest prosta, ale przy dwunastu godzinach snu pokusa, by zaplanować pieczenie na noc, jest realna. Nie rób tego. Ta sama logika, która przenosi fermentację na zimno w nocy, nie przenosi na noc gorącej części pieczenia.
+
+\begin{falle}
+Częsty błąd to założenie, że wyższa temperatura albo dłuższe pieczenie „na wszelki wypadek” poprawią chleb. Pieczenie w zbyt wysokiej temperaturze daje ciemną skórkę przy wilgotnym środku, a dłuższe pieczenie wysusza bochenek. Trzymaj się temperatury i czasu z tabeli, a jeśli chleb wyjdzie za jasny lub za blady, zmieniaj jedną rzecz naraz i zapisuj wynik.
+\end{falle}
+
+\begin{cwiczenia}
+\exitem{Ciasto ma 500\,g mąki i 325\,g wody. Jakie jest nawodnienie w procentach?}{$325 / 500 = 0{,}65$, czyli 65\%.}
+\exitem{Zakwas o nawodnieniu 100\% waży 150\,g. Ile w nim mąki, a ile wody?}{Po 75\,g każdego składnika. Połowa masy zakwasu to mąka, połowa to woda.}
+\exitem{W przepisie na chleb drożdżowy jest 10\,g soli na 500\,g mąki. Ile procent mąki stanowi sól?}{$10 / 500 = 0{,}02$, czyli 2\% mąki.}
+\exitem{Waga pokazuje błąd 0,5\,g. Jaką część z 2\,g drożdży to stanowi?}{$0{,}5 / 2 = 0{,}25$, czyli ćwierć porcji drożdży. Dlatego ważenie drożdży wymaga wagi z dokładnością do grama, a najlepiej do dziesiątej części grama.}
+\exitem{Zaczynasz formować bagietki o 22:00. Ile godzin ma ciasto w lodówce i o której wyjmujesz je z niej?}{Zgodnie z tabelą 16 godzin, więc wyjmujesz je o 14:00 następnego dnia.}
+\exitem{Zakwasowy przepis ma 4 do 5 godzin w cieple, a drożdżowe około 1 do 1,5 godziny. Co to oznacza przy planowaniu jednego wypieku dziennie?}{Etap ciepły zakwasu musi przypaść na rano lub wcześniej, bo zajmuje więcej czasu. Przy drożdżach możesz ustawić go bliżej wyjścia z domu.}
+\exitem{Dlaczego nie rozgrzewasz piekarnika przed snem, skoro przepis wymaga 230\,°C?}{Nagrzany piekarnik zostawiony bez nadzoru jest zagrożeniem pożarowym i poparzeniowym. Rozgrzewanie wykonujesz po przebudzeniu, w czasie, gdy widzisz zegar.}
+\exitem{Co w tej książce przenosi się na noc, a co zostaje na rano?}{Na noc przenosisz fermentację w lodówce, która nie wymaga Twojej obecności. Na rano zostawiasz etap ciepły i pieczenie, które wymagają obecności i kontroli.}
+\end{cwiczenia}
+
+\zadanie{Upiecz jeden chleb z tabeli, wybrany tak, żeby jego etap zimny mieścił się w Twojej dobie. Zapisz, ile minut zajęła Ci praca aktywna wieczorem i rano, i sprawdź nawodnienie na wadze, z dokładnością do grama. Miara sukcesu: łączny czas aktywny poniżej 30 minut, nawodnienie obliczone i porównane z tabelą, a bochenek wyjęty z lodówki bez zmiany godziny snu.}
